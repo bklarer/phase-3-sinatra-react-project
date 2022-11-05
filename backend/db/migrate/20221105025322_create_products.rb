@@ -5,5 +5,6 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.float :price
       t.string :img_url
       t.integer :store_id
+    end
   end
 end
