@@ -29,7 +29,7 @@ function Store ({
             <img src={img} alt={"Store"}/>
             <h1>{name}</h1>
             <p>{zipcode}</p>
-            {/* <Link>{id}</Link> */}
+            <Link to={`/stores/${id}`}>See Products</Link>
             <button onClick={() => handleDeleteClick()}>Delete</button>
         </div>
 
