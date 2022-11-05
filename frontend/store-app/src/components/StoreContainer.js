@@ -19,6 +19,7 @@ function StoreContainer () {
 
     return(
         <div>
+            <button>Add Random Store</button>
             {stores.map((store) => {
                 return(
                     <Store

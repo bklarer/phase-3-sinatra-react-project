@@ -12,8 +12,11 @@ function Store ({
 
     return(
         <div>
-
-            
+            <img src={img} alt={"Store"}/>
+            <h1>{name}</h1>
+            <p>{zipcode}</p>
+            {/* <Link>{id}</Link> */}
+            <button>Delete</button>
         </div>
 
     )
