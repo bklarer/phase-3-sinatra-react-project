@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
   post "/stores" do
     store = Store.create(
       name: params[:name],
-      zipcode: params[:zipcode].
+      zipcode: params[:zipcode],
       img_url: params[:img_url]
     )
     store.to_json

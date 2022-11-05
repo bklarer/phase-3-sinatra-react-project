@@ -21,8 +21,8 @@ puts "🌱 Seeding spices..."
         Review.create(
             reviewer_first_name: Faker::Name.first_name,
             date: Faker::Date.between(from: 2.days.ago, to: Date.today),
-            stars: Faker::Number.within(range: 1..5)
-            review_text: Faker::Quote.famous_last_words
+            stars: Faker::Number.within(range: 1..5),
+            review_text: Faker::Quote.famous_last_words,
             product_id: Faker::Number.within(range: 1..25)
         )
     end
