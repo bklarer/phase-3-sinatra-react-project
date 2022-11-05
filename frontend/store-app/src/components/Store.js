@@ -5,8 +5,22 @@ function Store ({
     id,
     name,
     zipcode,
-    img
+    img,
+    onHandleDelete
 }) {
+
+    function handleDeleteClick() { 
+        fetch(`http://localhost:9292/stores/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        }).then((resp) => {
+            resp.json();
+            onHandleDelete(id)
+    });
+    }
 
 
 
@@ -16,7 +30,7 @@ function Store ({
             <h1>{name}</h1>
             <p>{zipcode}</p>
             {/* <Link>{id}</Link> */}
-            <button>Delete</button>
+            <button>Delete</button> {/* add onClick={() => handleDeleteClick()}*/}
         </div>
 
     )
