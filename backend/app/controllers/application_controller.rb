@@ -38,10 +38,10 @@ class ApplicationController < Sinatra::Base
 
   post "/products" do
     product = Product.create(
-    name: params[:name],
-    price: params[:price],
-    img_url: params[:img_url],
-    store_id: params[:store_id]
+      name: params[:name],
+      price: params[:price],
+      img_url: params[:img_url],
+      store_id: params[:store_id]
     )
     product.to_json
   end
@@ -64,13 +64,24 @@ class ApplicationController < Sinatra::Base
 
   post "/reviews" do
     review = Review.create(
-    reviewer_first_name: params[:reviewer_first_name],
-    date: params[:date],
-    stars: params[:stars],
-    review_text: params[:review_text],
-    product_id: params[:product_id]
+      reviewer_first_name: params[:reviewer_first_name],
+      date: params[:date],
+      stars: params[:stars],
+      review_text: params[:review_text],
+      product_id: params[:product_id]
     )
     review.to_json
+  end
+
+  patch "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.update(
+      reviewer_first_name: params[:reviewer_first_name],
+      stars: params[:stars],
+      review_text: params[:review_text],
+      product_id: params[:product_id]
+    )
+
   end
 
   delete "/reviews/:id" do
