@@ -30,7 +30,7 @@ function Store ({
             <h1>{name}</h1>
             <p>{zipcode}</p>
             {/* <Link>{id}</Link> */}
-            <button>Delete</button> {/* add onClick={() => handleDeleteClick()}*/}
+            <button onClick={() => handleDeleteClick()}>Delete</button>
         </div>
 
     )
