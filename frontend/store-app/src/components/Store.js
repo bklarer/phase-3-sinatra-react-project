@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 
 
-
-function Store () {
+function Store ({
+    id,
+    name,
+    zipcode,
+    img
+}) {
 
 
 

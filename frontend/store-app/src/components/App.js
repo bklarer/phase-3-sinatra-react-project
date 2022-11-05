@@ -1,13 +1,13 @@
 import { useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
-import Stores from './Stores';
+import StoreContainer from './StoreContainer';
 
 function App() {
   return (
     <div className="App">
       <h1>Test</h1>
-      <Stores/>
+      <StoreContainer/>
     </div>
   );
 }
