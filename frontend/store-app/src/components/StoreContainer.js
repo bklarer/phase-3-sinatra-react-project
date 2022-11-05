@@ -20,13 +20,28 @@ function StoreContainer () {
     }
     
 
+    function handleNewStore() {
+        fetch("http://localhost:9292/stores", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({}),
+        })
+        .then((resp) => resp.json())
+        .then((store) => {
+            setStores((stores) => [...stores, store] )
+        })
+    }
+
 
     return(
         <div>
             <div>
                 <Link to="/">Go Back</Link>
             </div>
-            <button>Add Random Store</button>
+            <button onClick={() => handleNewStore()}>Add Random Store</button>
             {stores.map((store) => {
                 return(
                     <Store
