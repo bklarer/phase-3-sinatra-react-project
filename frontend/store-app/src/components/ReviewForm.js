@@ -3,7 +3,7 @@ import { Link, useParams, useHistory } from "react-router-dom";
 
 
 
-function ReviewForm({onAddReview}) {
+function ReviewForm({reviews, setReviews}) {
     const{ id } = useParams()
     const history = useHistory()    
     
@@ -33,7 +33,7 @@ function ReviewForm({onAddReview}) {
         })
           .then((resp) => resp.json())
           .then((review) => {
-            onAddReview(review);
+            setReviews((reviews) => [...reviews, review]);
             history.push(`../`);
           });
       }
@@ -45,7 +45,7 @@ function ReviewForm({onAddReview}) {
         <div>
             <Link to={`../`}>Go Back</Link>
             <h1>New Review</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                 name="reviewer_first_name"
                 type="text"

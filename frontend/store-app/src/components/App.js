@@ -5,7 +5,7 @@ import StoreContainer from './StoreContainer';
 import ProductContainer from './ProductContainer';
 import ReviewContainer from './ReviewContainer';
 import ReviewForm from './ReviewForm';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 
 function App() {
   const [reviews, setReviews] = useState([])
@@ -33,7 +33,10 @@ function App() {
           />
         </Route>
         <Route exact path="/stores/:storeId/products/:id/reviews/new">
-          <ReviewForm/>
+          <ReviewForm
+            reviews={reviews}
+            setReviews={setReviews}
+          />
         </Route>
       </Switch>
     </div>
