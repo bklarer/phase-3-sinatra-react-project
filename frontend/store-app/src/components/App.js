@@ -4,6 +4,7 @@ import Home from './Home';
 import StoreContainer from './StoreContainer';
 import ProductContainer from './ProductContainer';
 import ReviewContainer from './ReviewContainer';
+import ReviewForm from './ReviewForm';
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
         <Route exact path="/stores/:id">
           <ProductContainer/>
         </Route>
-        <Route exact path="/products/:id">
+        <Route exact path="/stores/:storeId/products/:id">
           <ReviewContainer/>
+        </Route>
+        <Route exact path="/stores/:storeId/products/:id/reviews/new">
+          <ReviewForm/>
         </Route>
       </Switch>
     </div>

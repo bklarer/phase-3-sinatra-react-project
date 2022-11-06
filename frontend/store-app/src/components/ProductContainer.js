@@ -54,6 +54,7 @@ return(
                 name={product.name}
                 price={product.price}
                 img={product.img_url}
+                store_id={product.store_id}
                 onHandleDelete={handleDelete}
             />
             )

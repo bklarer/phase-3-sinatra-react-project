@@ -7,6 +7,7 @@ function Product({
     name,
     price,
     img,
+    store_id,
     onHandleDelete
 }) {
 
@@ -34,7 +35,7 @@ function Product({
             <p>{`$${price}`}</p>
             <button onClick={() => handleDeleteClick()}>Delete</button>
             <div>
-                <Link to={`/products/${id}`}>See Reviews</Link>
+                <Link to={`${store_id}/products/${id}`}>See Reviews</Link>
             </div>
         </div>
     )
