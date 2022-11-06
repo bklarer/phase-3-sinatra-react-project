@@ -33,6 +33,9 @@ function Product({
             <img src={img} alt={"Product"}/>
             <p>{`$${price}`}</p>
             <button onClick={() => handleDeleteClick()}>Delete</button>
+            <div>
+                <Link to={`/products/${id}`}>See Reviews</Link>
+            </div>
         </div>
     )
 

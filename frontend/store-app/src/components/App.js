@@ -4,6 +4,7 @@ import '../App.css';
 import Home from './Home';
 import StoreContainer from './StoreContainer';
 import ProductContainer from './ProductContainer';
+import ReviewContainer from './ReviewContainer';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route exact path="/stores/:id">
           <ProductContainer/>
+        </Route>
+        <Route exact path="/products/:id">
+          <ReviewContainer/>
         </Route>
       </Switch>
     </div>

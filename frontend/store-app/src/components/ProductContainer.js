@@ -5,9 +5,9 @@ import { Link, useParams } from "react-router-dom";
 
 
 function ProductContainer () {
-const [products, setProducts] = useState([])
-const{ id } = useParams()
-const [currentStore, setCurrentStore] = useState("")
+    const [products, setProducts] = useState([])
+    const{ id } = useParams()
+    const [currentStore, setCurrentStore] = useState("")
 
 
     useEffect(() => {
