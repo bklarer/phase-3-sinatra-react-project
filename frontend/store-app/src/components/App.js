@@ -5,8 +5,15 @@ import StoreContainer from './StoreContainer';
 import ProductContainer from './ProductContainer';
 import ReviewContainer from './ReviewContainer';
 import ReviewForm from './ReviewForm';
+import { useState, useEffect} from 'react';
 
 function App() {
+  const [reviews, setReviews] = useState([])
+  
+  
+  
+  
+  
   return (
     <div className="App">
       <Switch>
@@ -20,7 +27,10 @@ function App() {
           <ProductContainer/>
         </Route>
         <Route exact path="/stores/:storeId/products/:id">
-          <ReviewContainer/>
+          <ReviewContainer
+            reviews={reviews}
+            setReviews={setReviews}
+          />
         </Route>
         <Route exact path="/stores/:storeId/products/:id/reviews/new">
           <ReviewForm/>

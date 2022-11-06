@@ -4,8 +4,7 @@ import Review from "./Review"
 
 
 
-function ReviewContainer() {
-    const [reviews, setReviews] = useState([])
+function ReviewContainer({reviews, setReviews}) {
     const {id, storeId} = useParams()
     const [currentProduct, setCurrentProduct] = useState("")
 

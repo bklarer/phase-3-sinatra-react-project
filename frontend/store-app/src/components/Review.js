@@ -31,10 +31,10 @@ function Review(
     return (
 
         <div>
-            <h2>{reviewer}</h2>
-            <h3>{date}</h3>
+            <h2>Name: {reviewer}</h2>
+            <h3>Date: {date}</h3>
             <h3>Rating = {stars}</h3>
-            <p>{text}</p>
+            <p>Review: {text}</p>
             <button onClick={() => handleDeleteClick()}>Delete</button>
             <p>------------------------------------</p>
         </div>
