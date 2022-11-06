@@ -1,4 +1,4 @@
-
+import { Link, useParams } from "react-router-dom";
 
 
 function Review(
@@ -13,6 +13,7 @@ function Review(
 ) {
     const date = date_time.split("T")[0]
     const stars = "★".repeat(rating)
+    const {storeId, productId} = useParams()
 
     function handleDeleteClick() { 
         fetch(`http://localhost:9292/reviews/${id}`,{
@@ -35,6 +36,7 @@ function Review(
             <h3>Date: {date}</h3>
             <h3>Rating = {stars}</h3>
             <p>Review: {text}</p>
+            <Link to={`/stores/${storeId}/products/${productId}/reviews/${id}`}>Edit</Link>
             <button onClick={() => handleDeleteClick()}>Delete</button>
             <p>------------------------------------</p>
         </div>

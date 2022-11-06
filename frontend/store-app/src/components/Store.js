@@ -29,9 +29,11 @@ function Store ({
         <div>
             <img src={img} alt={"Store"}/>
             <h1>{name}</h1>
-            <p>{zipcode}</p>
+            <p>Zip Code {zipcode}</p>
+            <div>
+                <button onClick={() => handleDeleteClick()}>Delete</button>
+            </div>
             <Link to={`/stores/${id}`}>See Products</Link>
-            <button onClick={() => handleDeleteClick()}>Delete</button>
         </div>
 
     )

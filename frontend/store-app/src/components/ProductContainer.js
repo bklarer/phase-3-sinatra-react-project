@@ -6,18 +6,18 @@ import { Link, useParams } from "react-router-dom";
 
 function ProductContainer () {
     const [products, setProducts] = useState([])
-    const{ id } = useParams()
+    const{ storeId } = useParams()
     const [currentStore, setCurrentStore] = useState("")
 
 
     useEffect(() => {
-        fetch(`http://localhost:9292/stores/${id}`)
+        fetch(`http://localhost:9292/stores/${storeId}`)
             .then((resp) => resp.json())
             .then((store) => {
                 setProducts(store.products)
                 setCurrentStore(store.name)
             })
-    },[id])
+    },[storeId])
 
     function handleNewProduct() {
         fetch("http://localhost:9292/products", {
@@ -26,7 +26,7 @@ function ProductContainer () {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
-            body: JSON.stringify({store_id: id}),
+            body: JSON.stringify({store_id: storeId}),
         })
         .then((resp) => resp.json())
         .then((store) => {

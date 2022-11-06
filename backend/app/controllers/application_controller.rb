@@ -57,7 +57,7 @@ class ApplicationController < Sinatra::Base
     reviews.to_json
   end
 
-  get "reviews/:id" do
+  get "/reviews/:id" do
     review = Review.find(params[:id])
     review.to_json
   end
@@ -81,7 +81,7 @@ class ApplicationController < Sinatra::Base
       review_text: params[:review_text],
       product_id: params[:product_id]
     )
-
+    review.to_json
   end
 
   delete "/reviews/:id" do

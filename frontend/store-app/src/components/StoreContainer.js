@@ -42,6 +42,7 @@ function StoreContainer () {
                 <Link to="/">Go Back</Link>
             </div>
             <button onClick={() => handleNewStore()}>Add Random Store</button>
+            <h1>Stores</h1>
             {stores.map((store) => {
                 return(
                     <Store
