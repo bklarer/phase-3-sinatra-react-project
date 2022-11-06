@@ -9,7 +9,6 @@ function ReviewContainer() {
     const {id, storeId} = useParams()
     const [currentProduct, setCurrentProduct] = useState("")
 
-    console.log(id)
 
     useEffect(() => {
         fetch(`http://localhost:9292/products/${id}`)

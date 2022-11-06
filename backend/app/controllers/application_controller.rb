@@ -65,7 +65,7 @@ class ApplicationController < Sinatra::Base
   post "/reviews" do
     review = Review.create(
       reviewer_first_name: params[:reviewer_first_name],
-      date: params[:date],
+      date: Faker::Date.between(from:Date.today, to: Date.today),
       stars: params[:stars],
       review_text: params[:review_text],
       product_id: params[:product_id]

@@ -20,7 +20,7 @@ puts "🌱 Seeding spices..."
     50.times do
         Review.create(
             reviewer_first_name: Faker::Name.first_name,
-            date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+            date: Faker::Date.between(from:Date.today, to: Date.today),
             stars: Faker::Number.within(range: 1..5),
             review_text: Faker::Quote.famous_last_words,
             product_id: Faker::Number.within(range: 1..25)
