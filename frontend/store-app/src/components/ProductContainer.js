@@ -34,10 +34,15 @@ const [currentStore, setCurrentStore] = useState("")
         })
     }
 
+    function handleDelete(id) {
+        const updatedProducts = products.filter((product) => product.id !== id);
+        setProducts(updatedProducts);
+    }
 
 
 return(
     <div>
+        <Link to={"/stores"}>Go Back</Link>
         <h1>{`Store: ${currentStore}`}</h1>
         <button onClick={() => handleNewProduct()}>Add Random Product</button>
         <h2>{"Products"}</h2>
@@ -49,14 +54,12 @@ return(
                 name={product.name}
                 price={product.price}
                 img={product.img_url}
-            
+                onHandleDelete={handleDelete}
             />
             )
         })
 
         }
-
-
     </div>
 
 
