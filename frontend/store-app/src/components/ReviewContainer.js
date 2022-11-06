@@ -19,7 +19,10 @@ function ReviewContainer() {
             })
     },[id])
 
-
+    function handleDelete(id) {
+        const updatedReviews = reviews.filter((review) => review.id !== id);
+        setReviews(updatedReviews);
+    }
 
     
     
@@ -38,6 +41,7 @@ function ReviewContainer() {
                     rating={review.stars}
                     reviewer={review.reviewer_first_name}
                     text={review.review_text}
+                    onHandleDelete={handleDelete}
                     />
                 )
             })
