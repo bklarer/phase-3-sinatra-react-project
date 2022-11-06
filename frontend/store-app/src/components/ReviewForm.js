@@ -1,12 +1,25 @@
 import { useState,} from 'react';
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 
 
 
 function ReviewForm() {
     const{ id } = useParams()
+    const history = useHistory()    
+    
+    const [newReview, setNewReview] = useState({
+        reviewer_first_name: "",
+        stars: 1,
+        review_text: "",
+        product_id: id
+    })
+    
+    console.log(newReview)
 
-
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setNewReview((newReview) => ({ ...newReview, [name]: value }));
+      }
 
     return (
 
@@ -19,6 +32,8 @@ function ReviewForm() {
                 name="reviewer_first_name"
                 type="text"
                 placeholder="First Name"
+                onChange={handleChange}
+                value={newReview.reviewer_first_name}
                 />
                 <div>
                     <label>Rating</label>
@@ -27,7 +42,8 @@ function ReviewForm() {
                     type="number"
                     min="1"
                     max="5"
-                    defaultValue="5"
+                    onChange={handleChange}
+                    value={newReview.stars}
                     />
                 </div>
                 <div>
@@ -35,6 +51,8 @@ function ReviewForm() {
                         name="review_text"
                         type="text"
                         placeholder="Type review here..."
+                        onChange={handleChange}
+                        value={newReview.review_text}
                     />
                 </div>
                 <button type="submit">Submit</button>
