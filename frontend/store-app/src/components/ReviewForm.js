@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 
-function ReviewForm({ reviews, setReviews }) {
-  const { id } = useParams();
+function ReviewForm({ setReviews }) {
+  const { productId } = useParams();
   const history = useHistory();
 
   const [newReview, setNewReview] = useState({
     reviewer_first_name: "",
     stars: 1,
     review_text: "",
-    product_id: id,
+    product_id: productId,
   });
 
   console.log(newReview);
