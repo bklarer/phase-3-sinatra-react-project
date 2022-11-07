@@ -11,9 +11,6 @@ function StoreContainer() {
       .then((stores) => setStores(stores));
   }, []);
 
-  // Will need function to handle delete... Pass down to Store
-  // Also will need function to create random store
-
   function handleDelete(id) {
     const updatedStores = stores.filter((store) => store.id !== id);
     setStores(updatedStores);

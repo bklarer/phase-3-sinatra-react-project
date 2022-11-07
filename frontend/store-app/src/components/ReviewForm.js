@@ -12,8 +12,6 @@ function ReviewForm({ setReviews }) {
     product_id: productId,
   });
 
-  console.log(newReview);
-
   function handleChange(e) {
     const { name, value } = e.target;
     setNewReview((newReview) => ({ ...newReview, [name]: value }));
