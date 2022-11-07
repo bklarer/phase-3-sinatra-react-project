@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Col } from "react-bootstrap";
 
 function Review({ id, date_time, rating, reviewer, text, onHandleDelete }) {
   const date = date_time.split("T")[0];
@@ -19,7 +20,7 @@ function Review({ id, date_time, rating, reviewer, text, onHandleDelete }) {
   }
 
   return (
-    <div>
+    <Col sm={4}>
       <h2>Name: {reviewer}</h2>
       <h3>Date: {date}</h3>
       <h3>Rating = {stars}</h3>
@@ -29,7 +30,7 @@ function Review({ id, date_time, rating, reviewer, text, onHandleDelete }) {
       </Link>
       <button onClick={() => handleDeleteClick()}>Delete</button>
       <p>------------------------------------</p>
-    </div>
+    </Col>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Review from "./Review";
+import { Container, Row } from "react-bootstrap";
 
 function ReviewContainer({ reviews, setReviews }) {
   const [currentProduct, setCurrentProduct] = useState("");
@@ -21,27 +22,29 @@ function ReviewContainer({ reviews, setReviews }) {
   }, [productId, setReviews]);
 
   return (
-    <div>
+    <Container>
       <h1>Product: {currentProduct}</h1>
       <Link to={`/stores/${storeId}`}>Go Back</Link>
       <p>------------------------------------</p>
       <Link to={`/stores/${storeId}/products/${productId}/reviews/new`}>
         Add Review
       </Link>
-      {reviews.map((review) => {
-        return (
-          <Review
-            key={review.id}
-            id={review.id}
-            date_time={review.date}
-            rating={review.stars}
-            reviewer={review.reviewer_first_name}
-            text={review.review_text}
-            onHandleDelete={handleDelete}
-          />
-        );
-      })}
-    </div>
+      <Row>
+        {reviews.map((review) => {
+          return (
+            <Review
+              key={review.id}
+              id={review.id}
+              date_time={review.date}
+              rating={review.stars}
+              reviewer={review.reviewer_first_name}
+              text={review.review_text}
+              onHandleDelete={handleDelete}
+            />
+          );
+        })}
+      </Row>
+    </Container>
   );
 }
 

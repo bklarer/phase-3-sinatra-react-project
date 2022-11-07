@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Product from "./Product";
 import { Link, useParams } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
+
 
 function ProductContainer() {
   const [products, setProducts] = useState([]);
@@ -37,8 +39,9 @@ function ProductContainer() {
   }
 
   return (
-    <div>
+    <Container>
       <Link to={"/stores"}>Go Back</Link>
+      <Row>
       <h1>{`Store: ${currentStore}`}</h1>
       <button onClick={() => handleNewProduct()}>Add Random Product</button>
       <h2>{"Products"}</h2>
@@ -55,7 +58,8 @@ function ProductContainer() {
           />
         );
       })}
-    </div>
+      </Row>
+    </Container>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Col, Card } from "react-bootstrap";
 
 function Product({ id, name, price, img, store_id, onHandleDelete }) {
   function handleDeleteClick() {
@@ -15,15 +16,17 @@ function Product({ id, name, price, img, store_id, onHandleDelete }) {
   }
 
   return (
-    <div>
-      <h2>{name}</h2>
-      <img src={img} alt={"Product"} />
-      <p>{`$${price}`}</p>
-      <button onClick={() => handleDeleteClick()}>Delete</button>
-      <div>
-        <Link to={`${store_id}/products/${id}`}>See Reviews</Link>
-      </div>
-    </div>
+    <Col sm={4}>
+      <Card>
+        <h2>{name}</h2>
+        <img src={img} alt={"Product"} />
+        <p>{`$${price}`}</p>
+        <button onClick={() => handleDeleteClick()}>Delete</button>
+        <div>
+          <Link to={`${store_id}/products/${id}`}>See Reviews</Link>
+        </div>
+      </Card>
+    </Col>
   );
 }
 

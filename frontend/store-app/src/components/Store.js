@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Col } from "react-bootstrap";
 
 function Store({ id, name, zipcode, img, onHandleDelete }) {
   function handleDeleteClick() {
@@ -15,7 +16,7 @@ function Store({ id, name, zipcode, img, onHandleDelete }) {
   }
 
   return (
-    <div>
+    <Col sm={4}>
       <img src={img} alt={"Store"} />
       <h1>{name}</h1>
       <p>Zip Code {zipcode}</p>
@@ -23,7 +24,7 @@ function Store({ id, name, zipcode, img, onHandleDelete }) {
         <button onClick={() => handleDeleteClick()}>Delete</button>
       </div>
       <Link to={`/stores/${id}`}>See Products</Link>
-    </div>
+    </Col>
   );
 }
 
