@@ -11,8 +11,8 @@ class StoresController < ApplicationController
     
       post "/stores" do
         store = Store.create(
-          name: Faker::Address.community,
-          zipcode: Faker::Address.zip_code,
+          name: params[:name],
+          zipcode: params[:zipcode],
           img_url: Faker::Avatar.image
         )
         store.to_json

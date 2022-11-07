@@ -6,10 +6,19 @@ import ProductContainer from "./ProductContainer";
 import ReviewContainer from "./ReviewContainer";
 import ReviewForm from "./ReviewForm";
 import EditReview from "./EditReview";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import StoreForm from "./StoreForm";
 
 function App() {
   const [reviews, setReviews] = useState([]);
+  const [stores, setStores] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/stores")
+      .then((resp) => resp.json())
+      .then((stores) => setStores(stores));
+  }, []);
+
 
   return (
     <div className="App">
@@ -18,7 +27,10 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/stores">
-          <StoreContainer />
+          <StoreContainer stores={stores} setStores={setStores}/>
+        </Route>
+        <Route exact path="/stores/new">
+          <StoreForm stores={stores} setStores={setStores}/>
         </Route>
         <Route exact path="/stores/:storeId">
           <ProductContainer />
