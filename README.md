@@ -1,10 +1,32 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for the frontend.
+The backend was started through a fork of a project file for phase-3 from Flatiron School.
+
+
+## Goal of this project
+The goal of this project is to create a custom API through Ruby to persist data and combine it with a frontend through React.
+
+## Store-app
+The app was setup to serve as a piece in the basic relationships between a store with an Etsy like structure where each store has its own products.
+From each store, you can delete it, generate a new one or dig down further and see its product offerings. After products, you can see the reviews,
+delete them, add a new one, or edit one that is currently there and the corresponding fetch request will send the data to the server.
+
+The data currently stored on the server was seeded through the Faker gem.
+
+## To get Started
+CD into the store-app through the frontend folder and run `npm install`. After, run `npm start` to start up the front end. Open a new terminal, and
+cd into the backend folder and run `bundle install`. After, run `bundle exec rake server` to run the backend server created with Ruby.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `bundle exec rake server`
+Launches the backend server on (htt.://localhost:9292)
+
+### `bundle exec rake console`
+Runs binding.pry through rake for debugging
 
 ### `npm start`
 
